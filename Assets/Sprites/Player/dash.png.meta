@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 0d074e6ae9c231f43ab783000d00e733
+guid: edbb17dcfc61d6249ac39101313f1ffa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -649126406542755805
-    second: Player Pull 48x48_0
+      213: 7110878671101974141
+    second: dash_0
   - first:
-      213: -5741357861530353322
-    second: Player Pull 48x48_1
+      213: 7643240275301989466
+    second: dash_1
   - first:
-      213: -6028947513277127022
-    second: Player Pull 48x48_2
+      213: -8809873816130030523
+    second: dash_2
   - first:
-      213: -1748345460005128039
-    second: Player Pull 48x48_3
+      213: -4770175892979620097
+    second: dash_3
   - first:
-      213: -2684361654686208451
-    second: Player Pull 48x48_4
+      213: -1190105860681885623
+    second: dash_4
   - first:
-      213: -4985352666452146024
-    second: Player Pull 48x48_5
+      213: 8035217175372748222
+    second: dash_5
+  - first:
+      213: 697318719324224050
+    second: dash_6
+  - first:
+      213: -123402397366724103
+    second: dash_7
+  - first:
+      213: 1856454893650784056
+    second: dash_8
+  - first:
+      213: -6726272719258073990
+    second: dash_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +127,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -128,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Pull 48x48_0
+      name: dash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,21 +148,21 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32871b3f8f6ddf6f0800000000000000
-      internalID: -649126406542755805
+      spriteID: d765fefe97aeea260800000000000000
+      internalID: 7110878671101974141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Pull 48x48_1
+      name: dash_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,21 +170,21 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6514617a1799250b0800000000000000
-      internalID: -5741357861530353322
+      spriteID: a5c7556e88e321a60800000000000000
+      internalID: 7643240275301989466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Pull 48x48_2
+      name: dash_2
       rect:
         serializedVersion: 2
         x: 96
@@ -180,21 +192,21 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29664aded20e45ca0800000000000000
-      internalID: -6028947513277127022
+      spriteID: 544fd81e07a0db580800000000000000
+      internalID: -8809873816130030523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Pull 48x48_3
+      name: dash_3
       rect:
         serializedVersion: 2
         x: 144
@@ -202,21 +214,21 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9983ab73111acb7e0800000000000000
-      internalID: -1748345460005128039
+      spriteID: ff661de7c4eeccdb0800000000000000
+      internalID: -4770175892979620097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Pull 48x48_4
+      name: dash_4
       rect:
         serializedVersion: 2
         x: 192
@@ -224,21 +236,21 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3eafb32c4b3fbad0800000000000000
-      internalID: -2684361654686208451
+      spriteID: 94812f07605eb7fe0800000000000000
+      internalID: -1190105860681885623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Pull 48x48_5
+      name: dash_5
       rect:
         serializedVersion: 2
         x: 240
@@ -246,15 +258,81 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 898c214d92870dab0800000000000000
-      internalID: -4985352666452146024
+      spriteID: eb5d537d273d28f60800000000000000
+      internalID: 8035217175372748222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23afc804eaf5da900800000000000000
+      internalID: 697318719324224050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f956846c26994ef0800000000000000
+      internalID: -123402397366724103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f279dc3e373c910800000000000000
+      internalID: 1856454893650784056
       vertices: []
       indices: 
       edges: []
@@ -263,7 +341,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 86cb8087ef0a4524099efd94a4ad591f
+    spriteID: e4f425f92d952894a9f0997d9037e1b5
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +351,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Player Pull 48x48_0: -649126406542755805
-      Player Pull 48x48_1: -5741357861530353322
-      Player Pull 48x48_2: -6028947513277127022
-      Player Pull 48x48_3: -1748345460005128039
-      Player Pull 48x48_4: -2684361654686208451
-      Player Pull 48x48_5: -4985352666452146024
+      dash_0: 7110878671101974141
+      dash_1: 7643240275301989466
+      dash_2: -8809873816130030523
+      dash_3: -4770175892979620097
+      dash_4: -1190105860681885623
+      dash_5: 8035217175372748222
+      dash_6: 697318719324224050
+      dash_7: -123402397366724103
+      dash_8: 1856454893650784056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
