@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Move : MonoBehaviour
 {
@@ -7,6 +8,16 @@ public class Move : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    [Header("Dash Settings")]
+    private bool canDash = true;
+    private bool isDashing;
+    public float dashPower = 24f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
+
+    [SerializeField] private TrailRenderer dashTrail;
+
+    [Header("Movement Settings")]
     public float speed = 5f;
     public float knockbackForce = 5f;
     public float knockbackDuration = 0.5f;
@@ -25,11 +36,18 @@ public class Move : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthPlayer = GetComponent<HealthPlayer>();
+
+        if (dashTrail != null)
+        {
+            dashTrail.sortingLayerID = spriteRenderer.sortingLayerID;
+            dashTrail.sortingOrder = spriteRenderer.sortingOrder + 1;
+        }
     }
 
     void FixedUpdate()
     {
         if (isDead) return;
+        if (isDashing) return;
 
         if (!isTakingDamage && !movementBlocked)
         {
@@ -42,6 +60,23 @@ public class Move : MonoBehaviour
             {
                 isTakingDamage = false;
                 animator.SetBool("take_damage", false);
+            }
+        }
+    }
+
+    public void UpdateAttackPointDirection()
+    {
+        PlayerAttack attack = GetComponent<PlayerAttack>();
+        if (attack != null)
+        {
+            Vector2 direction = movementJoystick.Direction;
+            if (direction.magnitude > 0.1f)
+            {
+                attack.attackPoint.localPosition = new Vector2(direction.x * 0.5f, direction.y * 0.5f);
+            }
+            else
+            {
+                attack.attackPoint.localPosition = Vector2.zero;
             }
         }
     }
@@ -106,7 +141,28 @@ public class Move : MonoBehaviour
     }
 
     public void UnblockMovement()
-    {
+    {   
         movementBlocked = false;
+    }
+
+    public IEnumerator Dash()
+    {
+        if (!canDash) yield break;
+        canDash = false;
+        isDashing = true;
+        dashTrail.emitting = true;
+        Vector2 dashDirection = movementJoystick.Direction.normalized;
+        if (dashDirection == Vector2.zero)
+            dashDirection = new Vector2(transform.localScale.x, 0f);
+            Debug.Log("Dashing in direction: " + dashDirection);
+        rb.linearVelocity = dashDirection * dashPower;
+        yield return new WaitForSeconds(dashDuration);
+        rb.linearVelocity = Vector2.zero;
+        isDashing = false;
+        if (dashTrail != null)
+            dashTrail.emitting = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+        Debug.Log("Dash completed");
     }
 }

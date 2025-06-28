@@ -1,10 +1,11 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     public float attackRange = 1.5f;
     public int attackDamage = 10;
     public LayerMask enemyLayer;
+    public Transform attackPoint;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -36,10 +37,8 @@ public class PlayerAttack : MonoBehaviour
     // Animation Event
     public void ApplyAttackDamage()
     {
-        Vector2 direction = spriteRenderer.flipX ? Vector2.left : Vector2.right;
-        Vector2 origin = (Vector2)transform.position + direction * 0.5f;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(origin, attackRange, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll((Vector2)attackPoint.position, attackRange, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -47,10 +46,18 @@ public class PlayerAttack : MonoBehaviour
             if (health != null)
             {
                 health.TakeDamage(attackDamage);
+                Debug.Log("Daño aplicado a" + enemy.name);  
             }
         }
-
-        Debug.Log("Daño aplicado durante la animación");
+    }
+    public void OnDrawGizmosSelected()
+    {
+        //if (spriteRenderer == null)
+        //    spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) return;
+        // Dibuja un círculo en el editor para visualizar el rango de ataque
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere((Vector2)attackPoint.position, attackRange);
     }
 
     // Animation Event

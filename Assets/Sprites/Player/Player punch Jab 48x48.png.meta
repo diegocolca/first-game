@@ -1,43 +1,52 @@
 fileFormatVersion: 2
-guid: 92b804ed691305c45b978413911a093a
+guid: 6f95779835e08dd4ca465b7d41c3f92f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3265511694173517792
-    second: Player Punch 64x64_0
+      213: -1827589326547013534
+    second: Player Jab 48x48_0
   - first:
-      213: -5958394551721289882
-    second: Player Punch 64x64_1
+      213: 8028498442987966868
+    second: Player Jab 48x48_1
   - first:
-      213: 4648443667726022596
-    second: Player Punch 64x64_2
+      213: 4241943168559607210
+    second: Player Jab 48x48_2
   - first:
-      213: 7906255216823545266
-    second: Player Punch 64x64_3
+      213: 7358134961966794755
+    second: Player Jab 48x48_3
   - first:
-      213: -5437086216529083779
-    second: Player Punch 64x64_4
+      213: 5390217390189812637
+    second: Player Jab 48x48_4
   - first:
-      213: -2093828169686684309
-    second: Player Punch 64x64_5
+      213: -390413386964367934
+    second: Player Jab 48x48_5
   - first:
-      213: 2760074175503823497
-    second: Player Punch 64x64_6
+      213: -6907203695606842912
+    second: Player Jab 48x48_6
   - first:
-      213: 3628804719239001658
-    second: Player Punch 64x64_7
+      213: -1298289975688924126
+    second: Player Jab 48x48_7
   - first:
-      213: 7137891975270234453
-    second: Player Punch 64x64_8
+      213: 3871557679080840335
+    second: Player Jab 48x48_8
   - first:
-      213: 5625896990181949946
-    second: Player Punch 64x64_9
+      213: 6271025027982053665
+    second: Player Jab 48x48_9
   - first:
-      213: -3448787175358288976
-    second: Player Punch 64x64_10
+      213: 622979767498307916
+    second: Player Jab 48x48_10
   - first:
-      213: 418967443538332138
-    second: Player Punch 64x64_11
+      213: 865805634084333592
+    second: Player Jab 48x48_11
+  - first:
+      213: -5305155698348169109
+    second: Player Jab 48x48_12
+  - first:
+      213: -2605525191476537467
+    second: Player Jab 48x48_13
+  - first:
+      213: 1149995351747608712
+    second: Player Jab 48x48_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,7 +142,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -146,7 +155,7 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -159,177 +168,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Punch 64x64_0
+      name: Player punch Jab 48x48_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02847e26a629ea2d0800000000000000
-      internalID: -3265511694173517792
+      spriteID: 8c296d2e193c2b341ae88fbe879195f7
+      internalID: 962658572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_1
+      name: Player punch Jab 48x48_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 667970169b78f4da0800000000000000
-      internalID: -5958394551721289882
+      spriteID: b56968cc6879aeb4e8a5261093de84d1
+      internalID: -677221130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_2
+      name: Player punch Jab 48x48_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4c7393523e6928040800000000000000
-      internalID: 4648443667726022596
+      spriteID: 02c866d6a41c9e645ac1c28f0c7f5266
+      internalID: 792639451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_3
+      name: Player punch Jab 48x48_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd71c976fb24124694b9a05e91d4daf
+      internalID: 999357662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player punch Jab 48x48_4
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bda8560b39a8bd60800000000000000
-      internalID: 7906255216823545266
+      spriteID: 606af21c3d391344492b71d2223e34fd
+      internalID: 702825387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_4
+      name: Player punch Jab 48x48_5
       rect:
         serializedVersion: 2
-        x: 256
+        x: 240
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d728c9a94e69b84b0800000000000000
-      internalID: -5437086216529083779
+      spriteID: 539128b6d836e2943af885e928133a3e
+      internalID: 896532833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_5
+      name: Player punch Jab 48x48_6
       rect:
         serializedVersion: 2
-        x: 320
+        x: 288
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b6d6e1d8f5a31f2e0800000000000000
-      internalID: -2093828169686684309
+      spriteID: 4a99c327e04e3e44f80ebecb080f7e27
+      internalID: 1375906425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_6
+      name: Player punch Jab 48x48_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa76b562b4bf5a5439586a89597a9443
+      internalID: 28717514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player punch Jab 48x48_8
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 98272a0d6d0cd4620800000000000000
-      internalID: 2760074175503823497
+      spriteID: 355215df64b33304bbd6aa18b56b9ce3
+      internalID: -1099342571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Punch 64x64_7
+      name: Player punch Jab 48x48_9
       rect:
         serializedVersion: 2
-        x: 448
+        x: 432
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a3670897aaa1c5230800000000000000
-      internalID: 3628804719239001658
+      spriteID: f2e8f693456275b43accb821f8013eee
+      internalID: -561584953
       vertices: []
       indices: 
       edges: []
@@ -338,7 +391,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ef52d064b971e724bb4e97f28d5d4923
+    spriteID: dfdbf6a9bddf3b44798bc714a601f5a2
     internalID: 0
     vertices: []
     indices: 
@@ -348,16 +401,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":48.0,"y":48.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":48.0,"y":48.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Player Punch 64x64_0: -3265511694173517792
-      Player Punch 64x64_1: -5958394551721289882
-      Player Punch 64x64_2: 4648443667726022596
-      Player Punch 64x64_3: 7906255216823545266
-      Player Punch 64x64_4: -5437086216529083779
-      Player Punch 64x64_5: -2093828169686684309
-      Player Punch 64x64_6: 2760074175503823497
-      Player Punch 64x64_7: 3628804719239001658
+      Player punch Jab 48x48_0: 962658572
+      Player punch Jab 48x48_1: -677221130
+      Player punch Jab 48x48_2: 792639451
+      Player punch Jab 48x48_3: 999357662
+      Player punch Jab 48x48_4: 702825387
+      Player punch Jab 48x48_5: 896532833
+      Player punch Jab 48x48_6: 1375906425
+      Player punch Jab 48x48_7: 28717514
+      Player punch Jab 48x48_8: -1099342571
+      Player punch Jab 48x48_9: -561584953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

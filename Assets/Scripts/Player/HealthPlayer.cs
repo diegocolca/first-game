@@ -19,7 +19,7 @@ public class HealthPlayer : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"[PLAYER] Daño recibido: {damage}. Vida actual: {currentHealth}");
+        //Debug.Log($"[PLAYER] Daño recibido: {damage}. Vida actual: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -39,7 +39,7 @@ public class HealthPlayer : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("[PLAYER] murió.");
+        //Debug.Log("[PLAYER] murió.");
         onDeath?.Invoke();
 
         if (moveScript != null)
