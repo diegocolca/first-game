@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    public float range_agro = 15f;
+    public float range_pursue = 15f;
     public float speed = 5f;
     private bool playerIsAlive = true;
 
@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         float distance_player = Vector2.Distance(transform.position, player.position);
 
-        if (distance_player < range_agro)
+        if (distance_player < range_pursue)
         {
             Vector2 direction = (player.position - transform.position).normalized;
             move = new Vector2(direction.x, direction.y);
@@ -103,9 +103,13 @@ public class EnemyController : MonoBehaviour
         {
             if (playerHealth == null)
                 playerHealth = player.GetComponent<HealthPlayer>();
+            Move playerMove = player.GetComponent<Move>();
 
             if (playerHealth != null)
                 playerHealth.TakeDamage(attackDamage);
+            // Si el jugador tiene un script de movimiento, aplica daño de retroceso
+            if (playerMove != null)
+                playerMove.TakeDamage(transform.position);
         }
 
         lastAttackTime = Time.time;
@@ -121,11 +125,14 @@ public class EnemyController : MonoBehaviour
             {
                 playerHealth = player.GetComponent<HealthPlayer>();
             }
+            Move playerMove = player.GetComponent<Move>();
 
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(attackDamage);
             }
+            if (playerMove != null)
+                playerMove.TakeDamage(transform.position); 
         }
     }
 
@@ -135,12 +142,21 @@ public class EnemyController : MonoBehaviour
         playerIsAlive = false;
         move = Vector2.zero;
         animator.SetBool("has_a_target", false);
+        GetComponent<Collider2D>().enabled = false; // Desactiva el collider
     }
 
     public void OnDeath()
     {
         isDead = true;
-        move = Vector2.zero;
+        move = Vector2.zero;    
         animator.SetBool("has_a_target", false);
+        GetComponent<Collider2D>().enabled = false; // Desactiva el collider
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow wire sphere at the enemy's position to show attack range
+        Gizmos.color = Color.blueViolet;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

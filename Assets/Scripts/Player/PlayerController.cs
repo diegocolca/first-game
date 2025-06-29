@@ -29,6 +29,7 @@ public class Move : MonoBehaviour
     private bool movementBlocked = false;
 
     private HealthPlayer healthPlayer;
+    private Vector2 lastMoveDirection = Vector2.right;
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class Move : MonoBehaviour
                 animator.SetBool("take_damage", false);
             }
         }
+        UpdateAttackPointDirection();
     }
 
     public void UpdateAttackPointDirection()
@@ -69,15 +71,7 @@ public class Move : MonoBehaviour
         PlayerAttack attack = GetComponent<PlayerAttack>();
         if (attack != null)
         {
-            Vector2 direction = movementJoystick.Direction;
-            if (direction.magnitude > 0.1f)
-            {
-                attack.attackPoint.localPosition = new Vector2(direction.x * 0.5f, direction.y * 0.5f);
-            }
-            else
-            {
-                attack.attackPoint.localPosition = Vector2.zero;
-            }
+            attack.attackPoint.localPosition = new Vector2(lastMoveDirection.x * 0.5f, lastMoveDirection.y * 0.5f); 
         }
     }
 
@@ -90,6 +84,7 @@ public class Move : MonoBehaviour
         if (direction.magnitude > 0.1f)
         {
             rb.linearVelocity = direction * speed;
+            lastMoveDirection = direction.normalized;
 
             if (direction.x != 0)
             {
@@ -133,6 +128,7 @@ public class Move : MonoBehaviour
         {
             attack.CancelAttack();
         }
+        GetComponent<Collider2D>().enabled = false; // Desactivar colision al morir
     }
 
     public void BlockMovement()
