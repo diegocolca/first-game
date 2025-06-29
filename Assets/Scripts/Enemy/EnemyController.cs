@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!playerIsAlive || isDead) return;
 
@@ -89,7 +89,7 @@ public class EnemyController : MonoBehaviour
             animator.SetBool("has_a_target", false);
         }
 
-        rb.MovePosition(rb.position + move * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
     }
 
     private IEnumerator PerformAttack()
@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
         //{
         //    if (playerHealth == null)
         //        playerHealth = player.GetComponent<HealthPlayer>();
-        //    Move playerMove = player.GetComponent<Move>();
+        //    Move playerMove = player.GetComponent<Move>();    
 
         //    if (playerHealth != null)
         //        playerHealth.TakeDamage(attackDamage);
