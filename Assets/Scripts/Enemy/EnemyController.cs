@@ -99,18 +99,18 @@ public class EnemyController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f); // sincronizar con la animacion :v
 
-        if (player != null && Vector2.Distance(transform.position, player.position) < attackRange)
-        {
-            if (playerHealth == null)
-                playerHealth = player.GetComponent<HealthPlayer>();
-            Move playerMove = player.GetComponent<Move>();
+        //if (player != null && Vector2.Distance(transform.position, player.position) < attackRange)
+        //{
+        //    if (playerHealth == null)
+        //        playerHealth = player.GetComponent<HealthPlayer>();
+        //    Move playerMove = player.GetComponent<Move>();
 
-            if (playerHealth != null)
-                playerHealth.TakeDamage(attackDamage);
-            // Si el jugador tiene un script de movimiento, aplica daño de retroceso
-            if (playerMove != null)
-                playerMove.TakeDamage(transform.position);
-        }
+        //    if (playerHealth != null)
+        //        playerHealth.TakeDamage(attackDamage);
+        //    // Si el jugador tiene un script de movimiento, aplica daño de retroceso
+        //    if (playerMove != null)
+        //        playerMove.TakeDamage(transform.position);
+        //}
 
         lastAttackTime = Time.time;
         isAttacking = false;

@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
     public float dashCooldown = 1f;
 
     [SerializeField] private TrailRenderer dashTrail;
+    [SerializeField] private Transform trailOrigin;
 
     [Header("Movement Settings")]
     public float speed = 5f;
@@ -143,20 +144,32 @@ public class Move : MonoBehaviour
 
     public IEnumerator Dash()
     {
+
         if (!canDash) yield break;
         canDash = false;
         isDashing = true;
+        animator.SetBool("isDashing", true);
         dashTrail.emitting = true;
         Vector2 dashDirection = movementJoystick.Direction.normalized;
         if (dashDirection == Vector2.zero)
             dashDirection = new Vector2(transform.localScale.x, 0f);
             Debug.Log("Dashing in direction: " + dashDirection);
+
+        if (trailOrigin != null)
+        {
+            // Offset the trail origin behind the player
+            Vector2 dashDir = dashDirection; // Already normalized
+            float trailOffset = -0.5f; // Adjust as needed
+            trailOrigin.localPosition = new Vector3(dashDir.x * trailOffset, dashDir.y * trailOffset, 0f);
+        }
+
         rb.linearVelocity = dashDirection * dashPower;
         yield return new WaitForSeconds(dashDuration);
         rb.linearVelocity = Vector2.zero;
         isDashing = false;
         if (dashTrail != null)
             dashTrail.emitting = false;
+        animator.SetBool("isDashing", false);
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
         Debug.Log("Dash completed");
