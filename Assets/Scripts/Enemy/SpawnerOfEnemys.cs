@@ -2,7 +2,6 @@ using System.Linq;
 using UnityEngine;
 
 public class SpawnerOfEnemys : MonoBehaviour
-
 {
     [Header("Prefab del enemigo")]
     public GameObject enemyPrefab;
@@ -29,13 +28,12 @@ public class SpawnerOfEnemys : MonoBehaviour
                 .Where(t => t != this.transform).ToArray();
         }
 
-        // Spawnear enemigos => respet limit
         for (int i = 0; i < initialEnemyCount && i < maxEnemies; i++)
         {
             SpawnEnemy();
         }
 
-        timer = spawnInterval;
+        timer = 0f; // Primera espera es inmediata
     }
 
     void Update()
@@ -53,7 +51,7 @@ public class SpawnerOfEnemys : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (currentEnemies >= maxEnemies)return;
+        if (currentEnemies >= maxEnemies) return;
 
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
@@ -70,7 +68,6 @@ public class SpawnerOfEnemys : MonoBehaviour
             }
         }
 
-        // notificar al spawner 
         EnemyDespawn despawnScript = enemy.GetComponent<EnemyDespawn>();
         if (despawnScript == null)
         {
@@ -79,9 +76,9 @@ public class SpawnerOfEnemys : MonoBehaviour
         despawnScript.spawner = this;
     }
 
-    // Llamar desde EnemyDespawner caundo se deletea una unidad
     public void NotifyEnemyKilled()
     {
         currentEnemies = Mathf.Max(0, currentEnemies - 1);
     }
 }
+

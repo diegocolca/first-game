@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (!playerIsAlive || isDead) return;
 
@@ -63,24 +63,28 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Follow_Player();
+            FollowPlayer();
         }
     }
 
-    public void Follow_Player()
+    void FixedUpdate()
     {
-        float distance_player = Vector2.Distance(transform.position, player.position);
+        if (!isDead && playerIsAlive)
+        {
+            rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
+        }
+    }
 
-        if (distance_player < range_pursue)
+    private void FollowPlayer()
+    {
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (distance < range_pursue)
         {
             Vector2 direction = (player.position - transform.position).normalized;
-            move = new Vector2(direction.x, direction.y);
+            move = direction;
 
-            if (player.position.x < transform.position.x)
-                spriteRenderer.flipX = true;
-            else if (player.position.x > transform.position.x)
-                spriteRenderer.flipX = false;
-
+            spriteRenderer.flipX = player.position.x < transform.position.x;
             animator.SetBool("has_a_target", true);
         }
         else
@@ -88,8 +92,6 @@ public class EnemyController : MonoBehaviour
             move = Vector2.zero;
             animator.SetBool("has_a_target", false);
         }
-
-        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
     }
 
     private IEnumerator PerformAttack()
@@ -97,66 +99,48 @@ public class EnemyController : MonoBehaviour
         isAttacking = true;
         animator.SetTrigger("Attack_Velociraptor");
 
-        yield return new WaitForSeconds(0.5f); // sincronizar con la animacion :v
-
-        //if (player != null && Vector2.Distance(transform.position, player.position) < attackRange)
-        //{
-        //    if (playerHealth == null)
-        //        playerHealth = player.GetComponent<HealthPlayer>();
-        //    Move playerMove = player.GetComponent<Move>();    
-
-        //    if (playerHealth != null)
-        //        playerHealth.TakeDamage(attackDamage);
-        //    // Si el jugador tiene un script de movimiento, aplica daño de retroceso
-        //    if (playerMove != null)
-        //        playerMove.TakeDamage(transform.position);
-        //}
+        yield return new WaitForSeconds(0.5f); // sincronizar con la animación
 
         lastAttackTime = Time.time;
         isAttacking = false;
     }
 
-    
     public void ApplyAttackDamage()
     {
         if (player != null && Vector2.Distance(transform.position, player.position) < attackRange)
         {
             if (playerHealth == null)
-            {
                 playerHealth = player.GetComponent<HealthPlayer>();
-            }
+
             Move playerMove = player.GetComponent<Move>();
 
             if (playerHealth != null)
-            {
                 playerHealth.TakeDamage(attackDamage);
-            }
+
             if (playerMove != null)
-                playerMove.TakeDamage(transform.position); 
+                playerMove.TakeDamage(transform.position);
         }
     }
-
 
     private void OnPlayerDeath()
     {
         playerIsAlive = false;
         move = Vector2.zero;
         animator.SetBool("has_a_target", false);
-        GetComponent<Collider2D>().enabled = false; // Desactiva el collider
+        GetComponent<Collider2D>().enabled = false;
     }
 
     public void OnDeath()
     {
         isDead = true;
-        move = Vector2.zero;    
+        move = Vector2.zero;
         animator.SetBool("has_a_target", false);
-        GetComponent<Collider2D>().enabled = false; // Desactiva el collider
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void OnDrawGizmosSelected()
     {
-        // Draw a yellow wire sphere at the enemy's position to show attack range
-        Gizmos.color = Color.blueViolet;
+        Gizmos.color = new Color(0.54f, 0.17f, 0.89f); 
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
